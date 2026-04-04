@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study Assistant - The Ethereal Scholar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#ac8bf7",
+                    "inverse-on-surface": "#9b9da2",
+                    "on-primary-fixed": "#000000",
+                    "on-surface": "#2c2f33",
+                    "surface-bright": "#f5f6fc",
+                    "on-primary": "#f8f0ff",
+                    "surface-container-low": "#eff0f7",
+                    "surface-variant": "#dadde5",
+                    "secondary-fixed-dim": "#eebc5e",
+                    "surface-tint": "#6847ae",
+                    "on-secondary-fixed-variant": "#6b4b00",
+                    "surface-container-high": "#e0e2ea",
+                    "secondary": "#785500",
+                    "secondary-dim": "#694a00",
+                    "tertiary-fixed": "#fe9dce",
+                    "on-primary-container": "#2c006d",
+                    "primary-fixed": "#af8efa",
+                    "primary-container": "#af8efa",
+                    "tertiary": "#8f406c",
+                    "primary-dim": "#5b3ba1",
+                    "tertiary-container": "#fe9dce",
+                    "on-error-container": "#520c00",
+                    "background": "#f5f6fc",
+                    "error": "#b02500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#490331",
+                    "surface-container-highest": "#dadde5",
+                    "inverse-surface": "#0b0e12",
+                    "on-tertiary": "#ffeff3",
+                    "on-error": "#ffefec",
+                    "on-background": "#2c2f33",
+                    "error-container": "#f95630",
+                    "primary-fixed-dim": "#a181ec",
+                    "on-primary-fixed-variant": "#370c7c",
+                    "secondary-container": "#fdca6a",
+                    "tertiary-dim": "#81345f",
+                    "outline-variant": "#abadb3",
+                    "on-secondary": "#fff1de",
+                    "surface-container": "#e6e8ef",
+                    "on-secondary-container": "#5f4200",
+                    "outline": "#74777c",
+                    "secondary-fixed": "#fdca6a",
+                    "tertiary-fixed-dim": "#ef90c1",
+                    "surface-dim": "#d1d4dd",
+                    "surface": "#f5f6fc",
+                    "on-tertiary-container": "#641c47",
+                    "primary": "#6847ae",
+                    "error-dim": "#b92902",
+                    "on-surface-variant": "#595b61",
+                    "on-secondary-fixed": "#463000",
+                    "on-tertiary-fixed-variant": "#6f2651"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-ethereal {
+            background: radial-gradient(at 0% 0%, #FFCB6B 0%, transparent 50%),
+                        radial-gradient(at 100% 0%, #af8efa 0%, transparent 50%),
+                        radial-gradient(at 100% 100%, #fe9dce 0%, transparent 50%),
+                        radial-gradient(at 0% 100%, #6847ae 0%, transparent 50%);
+            background-color: #f5f6fc;
+        }
+    </style>
+</head>
+<body class="bg-ethereal min-h-screen font-body text-on-surface overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col p-6 h-screen w-64 rounded-r-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-3xl shadow-[0px_30px_60px_rgba(44,47,51,0.06)] z-40 tonal-shift bg-surface-container-low">
+<div class="mb-10 px-4">
+<span class="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-400 bg-clip-text text-transparent font-headline tracking-wide">Study Assistant</span>
+<p class="text-xs text-on-surface-variant mt-1">The Ethereal Scholar</p>
+</div>
+<div class="flex flex-col space-y-2 flex-grow">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-4 px-4 py-3 text-violet-700 dark:text-violet-300 font-bold border-r-4 border-violet-500 hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-all duration-300 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="book_5">book_5</span>
+<span class="font-label">Library</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label">Quizzes</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label">AI Assistant</span>
+</a>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/15">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label">Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-4 py-3">
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-white/50" data-alt="professional headshot of a young student smiling warmly with a clean background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmmip03nbItE1Sk1AFrLpjNJvuGQXDGx15D6QjIOrWu5DoklmWuy4iuSdSwudpYcoDL-Q__Mssar5Oc1B9gZf2kcv0hZB1A82hVEmFaNQ2mpn9UG8NVX6rEkfR_L1dLBn8YLtKkACq0EPco-ZQhAH36crpFJKeo4T0FZsa_MHOWAG-Ro8sQEAsSpIrb6hgLYLABkXpPFvJvJuP5q_C29WMK69gWoi0CnuyJcFhVNkLygQdxc6mtP2VWS45v-Ed9EANodEBIzMrW8Tk"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-[10px] text-on-surface-variant truncate">Premium Scholar</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen p-12 pb-32">
+<!-- TopNavBar Cluster -->
+<header class="flex justify-between items-center w-full mb-12 py-2">
+<div class="flex items-center bg-white/40 backdrop-blur-xl rounded-full px-6 py-2 border border-white/20 w-full max-w-md">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body w-full px-3" placeholder="Search your library..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/40 backdrop-blur-xl border border-white/20 hover:bg-white/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/40 backdrop-blur-xl border border-white/20 hover:bg-white/60 transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="history">history</span>
+</button>
+</div>
+</header>
+<!-- Hero Greeting -->
+<section class="mb-12">
+<h1 class="text-5xl font-extrabold font-headline text-on-surface tracking-tight mb-2">Hey Alex,</h1>
+<p class="text-2xl font-body text-on-surface-variant font-light">what do you want to learn today?</p>
+</section>
+<!-- Glassmorphism Action Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+<!-- Card 1: Upload -->
+<div class="group relative bg-white/40 backdrop-blur-2xl rounded-lg p-8 border border-white/30 shadow-2xl shadow-violet-500/5 hover:scale-105 hover:shadow-violet-500/15 transition-all duration-500 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-400 flex items-center justify-center text-white mb-6 group-hover:glow-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-3">Upload Document</h3>
+<div class="w-full border-2 border-dashed border-outline-variant/30 rounded-lg p-4 bg-surface-container-lowest/20 group-hover:bg-white/40 transition-colors">
+<p class="text-xs text-on-surface-variant">Drag &amp; drop PDF, Word or Text files here</p>
+</div>
+</div>
+<!-- Card 2: AI Summary -->
+<div class="group relative bg-white/40 backdrop-blur-2xl rounded-lg p-8 border border-white/30 shadow-2xl shadow-violet-500/5 hover:scale-105 hover:shadow-violet-500/15 transition-all duration-500">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-container to-secondary flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="summarize">summarize</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-3">AI Summary</h3>
+<p class="text-sm text-on-surface-variant font-body">Condense complex chapters into beautiful, readable study guides.</p>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-violet-500 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Quiz Generator -->
+<div class="group relative bg-white/40 backdrop-blur-2xl rounded-lg p-8 border border-white/30 shadow-2xl shadow-violet-500/5 hover:scale-105 hover:shadow-violet-500/15 transition-all duration-500">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-tertiary to-tertiary-fixed-dim flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-3">Quiz Generator</h3>
+<p class="text-sm text-on-surface-variant font-body">Instantly turn notes into interactive flashcards and practice tests.</p>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-violet-500 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4: Chat with Doc -->
+<div class="group relative bg-white/40 backdrop-blur-2xl rounded-lg p-8 border border-white/30 shadow-2xl shadow-violet-500/5 hover:scale-105 hover:shadow-violet-500/15 transition-all duration-500">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-dim to-primary-fixed-dim flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="forum">forum</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-3">Chat with Doc</h3>
+<p class="text-sm text-on-surface-variant font-body">Ask your textbooks questions directly and get sourced answers.</p>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-violet-500 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Stats Section (Bento Style) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white/20 backdrop-blur-xl rounded-lg p-10 border border-white/10 flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h2 class="text-2xl font-bold font-headline mb-8">Learning Progress</h2>
+<div class="grid grid-cols-3 gap-8">
+<div>
+<p class="text-3xl font-extrabold text-primary mb-1">128</p>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Docs Processed</p>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary mb-1">42</p>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Quizzes Taken</p>
+</div>
+<div>
+<p class="text-3xl font-extrabold text-primary mb-1">94%</p>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Avg. Accuracy</p>
+</div>
+</div>
+</div>
+<div class="mt-12 h-24 flex items-end gap-2">
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-primary/30 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-lg h-[50%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t-lg h-[80%]"></div>
+<div class="flex-1 bg-primary/60 rounded-t-lg h-[70%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-lg h-[100%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-lg h-[45%]"></div>
+</div>
+<!-- Aesthetic Glow -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-violet-400/20 blur-3xl rounded-full"></div>
+</div>
+<div class="bg-gradient-to-br from-violet-600 to-indigo-500 rounded-lg p-10 text-white relative overflow-hidden group">
+<h3 class="text-xl font-bold font-headline mb-2 relative z-10">Weekly Goal</h3>
+<p class="text-white/80 text-sm mb-10 relative z-10">Master 5 chapters of Organic Chemistry</p>
+<div class="relative z-10">
+<div class="flex justify-between text-xs mb-2 font-bold">
+<span>Progress</span>
+<span>80%</span>
+</div>
+<div class="w-full bg-white/20 h-3 rounded-full overflow-hidden">
+<div class="bg-white h-full w-[80%] rounded-full shadow-lg shadow-white/20"></div>
+</div>
+</div>
+<button class="mt-10 bg-white text-violet-700 px-6 py-3 rounded-full font-bold text-sm hover:shadow-xl hover:scale-105 transition-all relative z-10">Keep Pushing</button>
+<!-- Abstract Shape Decoration -->
+<div class="absolute top-0 right-0 p-4 opacity-20 transform group-hover:rotate-12 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar AI Chat Input -->
+<div class="fixed bottom-0 left-64 right-0 z-50 flex justify-center pb-8 animate-pulse-slow">
+<div class="w-full max-w-3xl mx-auto px-6">
+<div class="bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl rounded-full border border-white/20 shadow-2xl shadow-violet-500/10 p-2 flex items-center gap-4 hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300">
+<div class="bg-gradient-to-r from-violet-500 to-indigo-400 text-white rounded-full px-6 py-2 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-manrope text-sm font-semibold">AI Chat</span>
+</div>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-on-surface font-body py-2 px-2" placeholder="Ask anything about your documents..." type="text"/>
+<button class="w-10 h-10 rounded-full bg-violet-600 text-white flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

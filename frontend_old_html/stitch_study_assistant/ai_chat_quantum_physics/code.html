@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethereal Scholar | AI Study Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-dim": "#81345f",
+                        "surface-container-low": "#eff0f7",
+                        "surface-container-highest": "#dadde5",
+                        "outline": "#74777c",
+                        "on-secondary-fixed-variant": "#6b4b00",
+                        "inverse-on-surface": "#9b9da2",
+                        "surface-bright": "#f5f6fc",
+                        "on-tertiary-container": "#641c47",
+                        "primary-container": "#af8efa",
+                        "on-tertiary-fixed": "#490331",
+                        "error": "#b02500",
+                        "primary-fixed": "#af8efa",
+                        "error-dim": "#b92902",
+                        "on-primary": "#f8f0ff",
+                        "surface": "#f5f6fc",
+                        "on-error-container": "#520c00",
+                        "tertiary-container": "#fe9dce",
+                        "surface-variant": "#dadde5",
+                        "on-primary-fixed": "#000000",
+                        "surface-container": "#e6e8ef",
+                        "background": "#f5f6fc",
+                        "on-tertiary": "#ffeff3",
+                        "on-primary-container": "#2c006d",
+                        "tertiary-fixed-dim": "#ef90c1",
+                        "tertiary-fixed": "#fe9dce",
+                        "on-background": "#2c2f33",
+                        "secondary": "#785500",
+                        "on-tertiary-fixed-variant": "#6f2651",
+                        "outline-variant": "#abadb3",
+                        "primary": "#6847ae",
+                        "on-secondary-fixed": "#463000",
+                        "on-secondary-container": "#5f4200",
+                        "tertiary": "#8f406c",
+                        "on-surface": "#2c2f33",
+                        "primary-fixed-dim": "#a181ec",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e0e2ea",
+                        "secondary-dim": "#694a00",
+                        "primary-dim": "#5b3ba1",
+                        "inverse-primary": "#ac8bf7",
+                        "secondary-fixed": "#fdca6a",
+                        "surface-dim": "#d1d4dd",
+                        "secondary-fixed-dim": "#eebc5e",
+                        "on-primary-fixed-variant": "#370c7c",
+                        "surface-tint": "#6847ae",
+                        "error-container": "#f95630",
+                        "secondary-container": "#fdca6a",
+                        "on-secondary": "#fff1de",
+                        "on-error": "#ffefec",
+                        "inverse-surface": "#0b0e12",
+                        "on-surface-variant": "#595b61"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #f5f6fc 0%, #fff1de 25%, #f8f0ff 50%, #eff0f7 75%, #f5f6fc 100%);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(104, 71, 174, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(104, 71, 174, 0.2);
+            border-radius: 10px;
+        }
+        .abstract-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Ambient Glow Background Elements -->
+<div class="abstract-glow bg-[#FFCB6B] top-[-100px] left-[-100px]"></div>
+<div class="abstract-glow bg-primary-container bottom-[-100px] right-[10%]"></div>
+<div class="abstract-glow bg-tertiary-container top-[20%] right-[-100px]"></div>
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar Component (JSON Anchor) -->
+<aside class="fixed left-0 top-0 h-screen w-72 rounded-r-[2rem] bg-white/40 dark:bg-slate-950/40 backdrop-blur-2xl shadow-2xl shadow-indigo-500/5 flex flex-col py-10 px-6 gap-8 z-40">
+<div class="flex flex-col gap-1 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-amber-400 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-lg leading-tight tracking-tight text-primary">The Sanctuary</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">University Year 3</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 px-6 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95 duration-500 ease-in-out">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Study Session
+            </button>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-slate-600 font-medium hover:bg-violet-50/50 hover:translate-x-1 transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-slate-600 font-medium hover:bg-violet-50/50 hover:translate-x-1 transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+                    Study Guide
+                </a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-slate-600 font-medium hover:bg-violet-50/50 hover:translate-x-1 transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+                    Flashcards
+                </a>
+<!-- Active Item: AI Tutor -->
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg bg-gradient-to-r from-violet-500/20 to-transparent text-violet-700 border-l-4 border-violet-500 font-bold transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                    AI Tutor
+                </a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-slate-600 font-medium hover:bg-violet-50/50 hover:translate-x-1 transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    History
+                </a>
+</nav>
+<div class="flex flex-col gap-2 pt-6 border-t border-primary/10">
+<a class="flex items-center gap-4 py-2 px-4 rounded-lg text-slate-600 text-sm font-medium hover:bg-violet-50/50 transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+                    Help
+                </a>
+<a class="flex items-center gap-4 py-2 px-4 rounded-lg text-slate-600 text-sm font-medium hover:bg-violet-50/50 transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow ml-72 flex flex-col relative">
+<!-- Header Section -->
+<header class="h-24 px-12 flex items-center justify-between z-10">
+<div class="flex flex-col">
+<h1 class="font-headline text-2xl font-extrabold text-on-surface tracking-tight">Chatting about Quantum Physics</h1>
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-xs font-semibold text-on-surface-variant/70 tracking-wide uppercase">AI Tutor Session Active</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="flex items-center gap-3 glass-panel px-4 py-2 rounded-full border border-white/40">
+<img alt="Student Profile Avatar" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" data-alt="portrait of a young academic student with kind eyes wearing stylish glasses soft warm studio lighting ethereal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGpyQKwipMymv4kVVZ10mPhQIKNE4ziB-RevRqjVAfNdPeneuc3yBpNAtwFUppL5sKHVcRbCIrmRgGTBo1Gq87fhNl-qQ1F1HvuyxACcQU791cG3QLer4_P-FwqNDjmCBp8kobdHPrO17P2sXWp41ik3JRiTYnozmTynwgPqmUAETOf8MUs38Y0kZcbn4t99XdeF7tlyeNxA4jj90_dcN63VPXAmti2mXFZywelGGzEPT7zKbvmUL3GiJ7LQlzrmkj4aMKaW4VK6p3"/>
+<span class="font-headline font-bold text-sm">Alex Scholar</span>
+</div>
+</div>
+</header>
+<!-- Chat Message Area -->
+<section class="flex-grow px-12 pb-32 overflow-y-auto custom-scrollbar flex flex-col gap-8 pt-4">
+<!-- AI Message -->
+<div class="flex gap-4 max-w-[80%] items-start">
+<div class="w-10 h-10 rounded-2xl glass-panel flex-shrink-0 flex items-center justify-center shadow-sm border border-white/50">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="glass-card p-6 rounded-lg rounded-tl-none border border-white/60 shadow-sm">
+<p class="leading-relaxed text-on-surface">Hello Alex! I see you're diving into <span class="font-bold text-primary">Quantum Superposition</span> today. It's a fascinating concept where a physical system exists in all its theoretically possible states simultaneously.</p>
+<p class="mt-4 leading-relaxed text-on-surface">Would you like to start with the famous <span class="italic">Schrödinger's Cat</span> thought experiment or jump straight into the mathematical foundations?</p>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 ml-2 uppercase">Scholar AI • 10:24 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-4 max-w-[80%] items-start self-end flex-row-reverse">
+<div class="w-10 h-10 rounded-2xl bg-white flex-shrink-0 flex items-center justify-center shadow-sm border border-white/50 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close up avatar of a modern student friendly expression natural lighting soft pastels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhuHv9q2DDL1z6yslSSMwffNSu28OTSF4GV35IcAPTTQhjzMjPvJdmOqXdSH3bxDuHj7rLoXTcDcKoGuOEDd2WeTO5XevJEulAjpj4BT74ob_QMI3469gmgT01AUsO4BXGsCB4GjFM3zkaiadtXulLBJyjdpYOHeZ_eS7a9jWs3aSeqoBA_MccIG6kObf_01IWShIzMR18DtOMpIaFn9xeLwtbJlhkY8ofYg3BmRfvr-7kUS05n-wvQg10XhDVT7-EUJvB6Pon06U6"/>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<div class="bg-primary/90 text-on-primary p-6 rounded-lg rounded-tr-none shadow-xl shadow-primary/10">
+<p class="leading-relaxed font-medium">Let's start with the thought experiment. It always helps to have a visual analogy before we look at the wave functions.</p>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 mr-2 uppercase">You • 10:25 AM</span>
+</div>
+</div>
+<!-- AI Message with Image Context -->
+<div class="flex gap-4 max-w-[80%] items-start">
+<div class="w-10 h-10 rounded-2xl glass-panel flex-shrink-0 flex items-center justify-center shadow-sm border border-white/50">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="glass-card p-6 rounded-lg rounded-tl-none border border-white/60 shadow-sm flex flex-col gap-4">
+<p class="leading-relaxed text-on-surface">Excellent choice. Imagine a cat in a sealed box with a radioactive source. Until we open the box to observe, the cat is mathematically described as being in a <span class="font-bold">superposition</span> of both 'alive' and 'dead'.</p>
+<div class="w-full h-48 rounded-lg overflow-hidden relative group">
+<img alt="Quantum Illustration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="abstract digital illustration of a quantum cat in two states simultaneously ethereal neon lines glow on dark dreamy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsiOmDzapgFqTHdc7pLQroDtXAhIZ6wKDbv1uEB9BP6_nUx54uZCqs8wPGttohjad6kq6TMZC_tOQb7AABPPbppcdYuQpv0ieifKfIVB8DU7A4loV17EABUXgzplSIPed-DXnYjNcWP375hn1xzJeAAOY7ff51TY6FV8JXrP4VlunmS7Wfnd4flcCq1bFz5znZKICHo3NJdawGF90yUG8_Qrqozhugg_mzdkj2NeT5eWnuxd64rLYxJQvqEzkqK3BjEvuEH263lvcP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-medium">Visualizing Superposition: The Cat Paradox</p>
+</div>
+</div>
+<p class="text-on-surface">Does this help clarify why 'observation' is so critical in quantum mechanics?</p>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/50 ml-2 uppercase">Scholar AI • 10:26 AM</span>
+</div>
+</div>
+<!-- AI Typing Indicator -->
+<div class="flex gap-4 max-w-[80%] items-start">
+<div class="w-10 h-10 rounded-2xl glass-panel flex-shrink-0 flex items-center justify-center shadow-sm border border-white/50">
+<span class="material-symbols-outlined text-primary/40">psychology</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="glass-card px-5 py-3 rounded-full border border-white/60 shadow-sm flex items-center gap-3">
+<span class="text-sm font-medium text-primary italic">AI is thinking</span>
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce [animation-delay:0.4s]"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Input Area -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl px-8">
+<div class="glass-panel p-3 rounded-2xl shadow-[0_20px_50px_rgba(104,71,174,0.1)] border border-white/80 flex items-center gap-4">
+<button class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<div class="flex-grow relative">
+<input class="w-full bg-transparent border-none focus:ring-0 py-3 text-on-surface font-medium placeholder:text-on-surface-variant/40" placeholder="Ask anything about the quantum world..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white h-12 px-6 rounded-xl font-headline font-bold shadow-lg shadow-primary/30 flex items-center gap-2 transition-all hover:shadow-primary/40 active:scale-95 glow-effect">
+<span>Send</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-4">
+<button class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">auto_fix</span>
+                        Suggest follow-up
+                    </button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">book</span>
+                        Cite sources
+                    </button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">save</span>
+                        Save session
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

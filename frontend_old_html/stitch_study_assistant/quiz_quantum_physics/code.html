@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz Lab | Ethereal Scholar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#5f4200",
+                      "on-primary-fixed": "#000000",
+                      "primary": "#6847ae",
+                      "primary-dim": "#5b3ba1",
+                      "tertiary": "#8f406c",
+                      "surface-bright": "#f5f6fc",
+                      "on-tertiary-container": "#641c47",
+                      "on-tertiary-fixed-variant": "#6f2651",
+                      "tertiary-dim": "#81345f",
+                      "surface-container-low": "#eff0f7",
+                      "surface-tint": "#6847ae",
+                      "primary-fixed-dim": "#a181ec",
+                      "tertiary-fixed": "#fe9dce",
+                      "on-surface-variant": "#595b61",
+                      "on-background": "#2c2f33",
+                      "secondary-dim": "#694a00",
+                      "on-primary-fixed-variant": "#370c7c",
+                      "secondary": "#785500",
+                      "inverse-on-surface": "#9b9da2",
+                      "secondary-container": "#fdca6a",
+                      "surface": "#f5f6fc",
+                      "error-dim": "#b92902",
+                      "tertiary-fixed": "#fe9dce",
+                      "secondary-fixed-dim": "#eebc5e",
+                      "surface-container-highest": "#dadde5",
+                      "tertiary-fixed-dim": "#ef90c1",
+                      "on-error": "#ffefec",
+                      "on-secondary-fixed": "#463000",
+                      "on-surface": "#2c2f33",
+                      "on-error-container": "#520c00",
+                      "surface-container-high": "#e0e2ea",
+                      "background": "#f5f6fc",
+                      "primary-fixed": "#af8efa",
+                      "outline": "#74777c",
+                      "error-container": "#f95630",
+                      "on-tertiary": "#ffeff3",
+                      "on-primary-container": "#2c006d",
+                      "error": "#b02500",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#e6e8ef",
+                      "on-secondary-fixed-variant": "#6b4b00",
+                      "on-secondary": "#fff1de",
+                      "inverse-primary": "#ac8bf7",
+                      "on-tertiary-fixed": "#490331",
+                      "on-primary": "#f8f0ff",
+                      "inverse-surface": "#0b0e12",
+                      "secondary-fixed": "#fdca6a",
+                      "primary-container": "#af8efa",
+                      "outline-variant": "#abadb3",
+                      "surface-variant": "#dadde5",
+                      "surface-dim": "#d1d4dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background: radial-gradient(circle at top left, #FFCB6B22, transparent 40%),
+                        radial-gradient(circle at top right, #af8efa22, transparent 40%),
+                        radial-gradient(circle at bottom left, #fe9dce22, transparent 40%),
+                        radial-gradient(circle at bottom right, #6847ae11, transparent 40%),
+                        #f5f6fc;
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .ghost-border {
+            border: 1px solid rgba(171, 173, 179, 0.15);
+        }
+    </style>
+</head>
+<body class="text-on-surface min-h-screen">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-white/80 dark:bg-slate-950/80 backdrop-blur-3xl shadow-xl shadow-slate-900/5 font-plus-jakarta-sans tracking-wide">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold text-slate-800 dark:text-slate-100">Ethereal Scholar</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full ghost-border">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64" placeholder="Search resources..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-amber-50/50 transition-all duration-500 scale-95 duration-300 ease-in-out text-slate-500">
+<span class="material-symbols-outlined">menu_book</span>
+</button>
+<button class="p-2 rounded-full hover:bg-amber-50/50 transition-all duration-500 scale-95 duration-300 ease-in-out text-slate-500">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="Student profile avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a student with a friendly expression in a modern bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR8ml28tMoSEuHFgGxVIAa_6J0wpeJ1DmwfJ5wrAzxjQgF8vyVhBc3pGBBzR8CRUsjgp-ICi7cZoGHzv6q0wCLLBC0Xs0r7tVqD4eu6Ng57-3UOYmlZRJzSeXczSOQyzy-GOw7R1IY9UbXaG7aW12cT91A_Jse77yWgA9bSpMTw1pCKhb2Jd3ETuABMPzPTWMS1uUL--z0B9lTMoafxiCtZAxZH9EDomlrWqvJLWrrcT-AWa7YsPw4LcLQvXZWh7Pq2lR_24UmzTpr"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-24 pb-8 w-72 bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-2xl font-plus-jakarta-sans text-sm">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h2 class="text-xl font-black text-slate-900 dark:text-white">Study Lab</h2>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-widest">University Portal</p>
+</div>
+<nav class="flex-1 space-y-1 px-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span>Study Sanctuary</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span>Flashcards</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-amber-600 dark:text-amber-400 font-bold border-r-4 border-amber-500 bg-white/60" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span>Quiz Lab</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span>Resource Library</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span>Performance</span>
+</a>
+</nav>
+<div class="px-6 mt-8">
+<button class="w-full py-4 bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
+                Start New Session
+            </button>
+</div>
+<div class="mt-auto px-4 space-y-1">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-500 text-slate-500 hover:bg-white/40" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-72 pt-28 px-12 pb-12">
+<!-- Header & Progress Section -->
+<header class="max-w-4xl mx-auto mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<nav class="flex items-center gap-2 text-label text-slate-500 mb-2">
+<span class="text-xs uppercase tracking-widest font-bold">Quantum Mechanics 101</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-xs uppercase tracking-widest">Module 4</span>
+</nav>
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight">Introduction to Quantum Physics - Quiz 1</h1>
+</div>
+<div class="text-right">
+<span class="font-headline text-2xl font-bold text-primary">Question 2 <span class="text-slate-400 font-medium">of 5</span></span>
+</div>
+</div>
+<div class="relative w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-[40%] bg-gradient-to-r from-primary to-primary-container rounded-full shadow-[0_0_12px_rgba(104,71,174,0.4)]"></div>
+</div>
+</header>
+<div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Main Quiz Area -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Main Question Card -->
+<div class="glass-panel p-10 rounded-lg shadow-xl shadow-slate-900/5 ghost-border relative overflow-hidden">
+<!-- Subtle decorative glow -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 blur-3xl rounded-full"></div>
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">Theoretical Principles</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface leading-snug">
+                        What principle states that a physical system exists in all its theoretically possible states simultaneously until it is measured?
+                    </h3>
+</div>
+<!-- Answer Options -->
+<div class="space-y-4">
+<button class="w-full text-left glass-panel p-6 rounded-lg ghost-border hover:bg-white/90 transition-all duration-300 group flex items-center justify-between">
+<div class="flex items-center gap-6">
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-slate-500 group-hover:bg-primary/10 group-hover:text-primary transition-colors">A</span>
+<span class="font-body text-lg font-medium">Quantum Entanglement</span>
+</div>
+</button>
+<button class="w-full text-left glass-panel p-6 rounded-lg border-2 border-secondary bg-white/90 shadow-lg shadow-secondary/10 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<span class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold">B</span>
+<span class="font-body text-lg font-bold">Quantum Superposition</span>
+</div>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="w-full text-left glass-panel p-6 rounded-lg ghost-border hover:bg-white/90 transition-all duration-300 group flex items-center justify-between">
+<div class="flex items-center gap-6">
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-slate-500 group-hover:bg-primary/10 group-hover:text-primary transition-colors">C</span>
+<span class="font-body text-lg font-medium">Wave-Particle Duality</span>
+</div>
+</button>
+<button class="w-full text-left glass-panel p-6 rounded-lg ghost-border hover:bg-white/90 transition-all duration-300 group flex items-center justify-between">
+<div class="flex items-center gap-6">
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-slate-500 group-hover:bg-primary/10 group-hover:text-primary transition-colors">D</span>
+<span class="font-body text-lg font-medium">Uncertainty Principle</span>
+</div>
+</button>
+</div>
+<div class="flex justify-end pt-4">
+<button class="px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-lg font-bold text-lg shadow-xl shadow-primary/30 hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                        Next Question
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Sidebar / Hints Area -->
+<div class="lg:col-span-4 space-y-6">
+<!-- AI Hint Card -->
+<div class="glass-panel p-6 rounded-lg ghost-border shadow-lg shadow-slate-900/5 relative overflow-hidden">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="font-headline font-bold text-slate-800 text-sm">AI Study Hint</span>
+</div>
+<p class="font-body text-slate-600 text-sm italic leading-relaxed">
+                        "Think about the famous Gedankenexperiment involving a feline in a box. The state of the observer is just as critical as the observed."
+                    </p>
+<div class="mt-4 pt-4 border-t border-slate-100">
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline" href="#">
+                            View related lecture notes
+                            <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Contextual Card -->
+<div class="rounded-lg overflow-hidden ghost-border shadow-lg">
+<div class="h-32 bg-slate-200">
+<img alt="Quantum physics illustration" class="w-full h-full object-cover opacity-80" data-alt="Abstract visualization of quantum physics showing glowing nodes and interconnected light waves on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvob8FUX1NRhOM4woBK_XWaa7OPYDX7SxNVN-F3B_A_WmJiwEZs9P31KKmv9-kRgRmYz3i7G0YbIiSb_E5ktymqDUAtsrN96kO5TMEdutkDPwfYK0EMHaVPzOYynwShu3KRzCAKNDi4yiS0uMW_O_c4O-2kjZDAD9RMeB7p98wg5eOeRns-zPuZxNv5Kvcj6LUeJgnMAydspOwx13YC3yOnIEyXlzw7S1gdtme8ULCRY9VP1TlbFu5irNC8z_Z7zor3nJ_ZMVB98f4"/>
+</div>
+<div class="p-6 glass-panel">
+<h4 class="font-headline font-bold text-slate-800 mb-2">Did you know?</h4>
+<p class="text-xs text-slate-500 leading-relaxed">
+                            Quantum superposition is being used to develop quantum computers that can perform complex calculations millions of times faster than current supercomputers.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

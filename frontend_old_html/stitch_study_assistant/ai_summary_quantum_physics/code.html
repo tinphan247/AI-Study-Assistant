@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quantum Physics AI Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#af8efa",
+                        "on-secondary-fixed-variant": "#6b4b00",
+                        "on-primary": "#f8f0ff",
+                        "error": "#b02500",
+                        "surface-dim": "#d1d4dd",
+                        "outline-variant": "#abadb3",
+                        "on-tertiary": "#ffeff3",
+                        "secondary-fixed": "#fdca6a",
+                        "primary-fixed-dim": "#a181ec",
+                        "surface-container": "#e6e8ef",
+                        "secondary-dim": "#694a00",
+                        "on-primary-container": "#2c006d",
+                        "error-container": "#f95630",
+                        "inverse-primary": "#ac8bf7",
+                        "inverse-surface": "#0b0e12",
+                        "primary-container": "#af8efa",
+                        "primary-dim": "#5b3ba1",
+                        "on-tertiary-fixed": "#490331",
+                        "outline": "#74777c",
+                        "on-secondary-container": "#5f4200",
+                        "on-error-container": "#520c00",
+                        "on-surface": "#2c2f33",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#9b9da2",
+                        "tertiary-fixed": "#fe9dce",
+                        "tertiary": "#8f406c",
+                        "error-dim": "#b92902",
+                        "secondary-container": "#fdca6a",
+                        "surface-container-low": "#eff0f7",
+                        "tertiary-container": "#fe9dce",
+                        "on-primary-fixed-variant": "#370c7c",
+                        "surface-variant": "#dadde5",
+                        "tertiary-fixed-dim": "#ef90c1",
+                        "background": "#f5f6fc",
+                        "on-error": "#ffefec",
+                        "on-primary-fixed": "#000000",
+                        "on-secondary": "#fff1de",
+                        "on-secondary-fixed": "#463000",
+                        "surface-tint": "#6847ae",
+                        "on-surface-variant": "#595b61",
+                        "surface-container-high": "#e0e2ea",
+                        "surface": "#f5f6fc",
+                        "tertiary-dim": "#81345f",
+                        "primary": "#6847ae",
+                        "on-tertiary-container": "#641c47",
+                        "surface-container-highest": "#dadde5",
+                        "surface-bright": "#f5f6fc",
+                        "secondary": "#785500",
+                        "on-background": "#2c2f33",
+                        "secondary-fixed-dim": "#eebc5e",
+                        "on-tertiary-fixed-variant": "#6f2651"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #FFCB6B 0%, #e1d4fd 30%, #ffd6e0 60%, #d4e8ff 100%);
+            min-height: 100vh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .shimmer-text {
+            background: linear-gradient(90deg, #6847ae, #af8efa, #6847ae);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-6 h-screen w-64 rounded-r-3xl bg-white/60 backdrop-blur-3xl shadow-[0px_30px_60px_rgba(44,47,51,0.06)] z-50">
+<div class="mb-10 px-4">
+<span class="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-400 bg-clip-text text-transparent font-headline tracking-wide">Study Assistant</span>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">The Ethereal Scholar</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 text-violet-700 font-bold border-r-4 border-violet-500 bg-violet-50/50" href="#">
+<span class="material-symbols-outlined" data-icon="book_5">book_5</span>
+<span class="font-label">Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label">Quizzes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label">AI Assistant</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 text-slate-500 dark:text-slate-400 font-medium hover:bg-violet-50/50" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 flex items-center gap-3 glass-panel rounded-2xl border border-white/40">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a thoughtful student with soft lighting and blurred academic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBESoY2c7ZRuZE24txjMRXIGKa6kYwX4MhGNv36v_F5Adb3_TWU1gi8pmpHH-pGrM4yKqhMUP9C4d74MmI-vj0ZwL22QLSMT4c51qSr0U2LlZfXKFzRoEbxMHLpksQg7dBBb-D90UfVnxYZVwM7lb2oN1F7VYDFl2ZVj_eg8ZI36D75V-jOK87ED7ABhsxtr9DVnm8Obgtgrz_JohftEAEWAKWS4EBZRsqE_6eDFBk5YfOzpPPoMHo__WdMV1QOM0jBn5bBxbwZ1SgG"/>
+</div>
+<div>
+<p class="text-xs font-bold">User Profile</p>
+<p class="text-[10px] text-slate-500">Premium Scholar</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="flex justify-between items-center w-full px-12 py-6 ml-64 bg-transparent">
+<div class="flex items-center gap-4 bg-white/40 backdrop-blur-md rounded-full px-6 py-2 border border-white/20">
+<span class="material-symbols-outlined text-slate-400" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400 w-64" placeholder="Search your library..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-violet-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-background"></span>
+</button>
+<button class="text-slate-500 hover:text-violet-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 p-12 max-w-6xl">
+<!-- Header Section -->
+<div class="mb-12">
+<div class="flex items-center gap-4 mb-4">
+<div class="flex items-center gap-2 px-4 py-1 rounded-full bg-primary-container/20 text-primary font-bold text-xs border border-primary-container/30">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    AI Summary
+                </div>
+<div class="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+<h1 class="text-5xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Introduction to Quantum Physics</h1>
+<p class="text-on-surface-variant font-medium">Session: Spring 2024 • Theoretical Physics Core</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Summary Card -->
+<div class="lg:col-span-8 space-y-8">
+<article class="glass-panel rounded-lg p-10 shadow-[0px_30px_60px_rgba(104,71,174,0.08)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="visibility">visibility</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h2 class="text-xl font-bold font-headline">Executive Synthesis</h2>
+</div>
+<div class="space-y-6 text-lg leading-relaxed text-on-surface-variant font-body">
+<p class="typing-cursor">Quantum physics is the study of matter and energy at its most fundamental level. Unlike classical physics, where outcomes are predictable, the quantum realm is governed by probability and wave-like behavior.</p>
+<h3 class="text-on-surface font-bold text-sm uppercase tracking-widest pt-4">Key Principles Identified:</h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+<div>
+<span class="font-bold text-on-primary-container bg-primary-container/30 px-2 py-0.5 rounded-md shadow-[0_0_15px_rgba(175,142,250,0.4)]">Quantum Superposition</span>
+<p class="mt-1 text-base opacity-80">The principle that a physical system exists in all its theoretically possible states simultaneously until it is measured.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-secondary flex-shrink-0"></div>
+<div>
+<span class="font-bold text-on-secondary-container bg-secondary-container/30 px-2 py-0.5 rounded-md shadow-[0_0_15px_rgba(253,202,106,0.4)]">Entanglement</span>
+<p class="mt-1 text-base opacity-80">A phenomenon where particles become interconnected such that the state of one instantly influences the state of another, regardless of distance.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-tertiary flex-shrink-0"></div>
+<div>
+<span class="font-bold text-on-tertiary-container bg-tertiary-container/30 px-2 py-0.5 rounded-md shadow-[0_0_15px_rgba(254,157,206,0.4)]">Wave-Particle Duality</span>
+<p class="mt-1 text-base opacity-80">The concept that every elementary particle exhibits properties of both particles and waves.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Regenerate Action -->
+<div class="mt-12 pt-8 border-t border-outline-variant/15 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant italic flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                                Summary generated based on 45 minutes of lecture audio.
+                            </p>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-lg font-bold text-primary hover:bg-primary/5 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+                                    Refine Summary
+                                </button>
+<button class="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-bold shadow-[0px_10px_30px_rgba(104,71,174,0.3)] hover:scale-105 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                                    Regenerate
+                                </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Bento Sidebar -->
+<div class="lg:col-span-4 space-y-8">
+<!-- AI Insight Card -->
+<div class="glass-panel rounded-lg p-6 border border-white/40">
+<div class="w-12 h-12 bg-secondary-container/50 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h4 class="font-bold mb-2">AI Insight</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">This topic is frequently paired with <span class="text-primary font-semibold">Heisenberg's Uncertainty Principle</span> in your upcoming midterm.</p>
+<div class="mt-4 p-4 rounded-xl bg-white/30 border border-white/20">
+<div class="flex items-center gap-2 text-xs font-bold text-primary mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+                            Recommended Action
+                        </div>
+<p class="text-xs">Generate a 10-question quiz on Wave-Particle Duality?</p>
+</div>
+</div>
+<!-- Study Visual Card -->
+<div class="glass-panel rounded-lg overflow-hidden group">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="abstract artistic representation of quantum wave functions with glowing geometric patterns and deep purple cosmic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBseq7HyOO7r_GDS122Ypji08pli3C4ZmUwPFAbTsUS3bGW7V412FuARuWhpjTjkgtM0LBk-TuzPMQrv6ACWeczKqyphm44ckGx8wD7JeGk5x4OxZiSOG_Hdni25efjfz2Xq7Moh3pfcFh0eHTtvQy-vFCGs_JFDNdCDc_hjk5CRmUnX5PjhGgSqiDmMpzVspMwnKC8ibxfkeSNR5FRdxSfwHCP-EXiIv5sbOQfJfGUjYCqJZvFqIWqupvlYEyCcrZkktqwY-RReEyZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<p class="text-white font-bold">Visualizing Superposition</p>
+</div>
+</div>
+<div class="p-6">
+<p class="text-sm text-on-surface-variant mb-4">Interactive diagram available in the Library.</p>
+<button class="w-full py-3 rounded-xl border border-primary/20 text-primary font-bold text-sm hover:bg-primary/5 transition-colors">
+                            Explore 3D Model
+                        </button>
+</div>
+</div>
+<!-- Related Content -->
+<div class="glass-panel rounded-lg p-6">
+<h4 class="font-bold mb-4 flex items-center justify-between">
+                        Related Sources
+                        <span class="text-[10px] text-slate-400 font-normal">3 files linked</span>
+</h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/40 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-blue-500" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="text-xs">
+<p class="font-bold truncate">Lecture_Slides_Week4.pdf</p>
+<p class="text-[10px] text-slate-500">2.4 MB • Mar 12</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/40 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-red-500" data-icon="video_library">video_library</span>
+<div class="text-xs">
+<p class="font-bold truncate">Introduction_Physics_Rec.mp4</p>
+<p class="text-[10px] text-slate-500">128 MB • Mar 12</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Anchor (AI Chat Prompt) -->
+<nav class="fixed bottom-0 left-64 right-0 z-50 flex justify-center pb-8">
+<div class="max-w-3xl w-full mx-auto px-6">
+<div class="glass-panel rounded-full border border-white/20 shadow-2xl shadow-violet-500/10 p-2 flex items-center gap-2 group focus-within:shadow-violet-500/20 transition-all duration-300">
+<div class="flex-1 flex items-center gap-4 px-6">
+<span class="material-symbols-outlined text-violet-500 animate-pulse" data-icon="auto_awesome">auto_awesome</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body w-full py-2" placeholder="Ask AI to clarify a concept from the summary..." type="text"/>
+</div>
+<button class="bg-gradient-to-r from-violet-500 to-indigo-400 text-white rounded-full px-6 py-2 font-bold text-sm flex items-center gap-2 shadow-lg hover:scale-105 active:scale-95 transition-all">
+                    Send
+                    <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</nav>
+</body></html>
