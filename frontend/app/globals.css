@@ -62,17 +62,24 @@
 
 @layer utilities {
   .bg-ethereal {
-    background: radial-gradient(at 0% 0%, rgba(255, 203, 107, 0.4) 0%, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(175, 142, 250, 0.4) 0%, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(254, 157, 206, 0.4) 0%, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(104, 71, 174, 0.3) 0%, transparent 50%);
-    background-color: #f5f6fc;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(236,72,153,0.2), transparent 40%),
+      var(--color-bg);
   }
 }
 
 :root {
-  --background: #f5f6fc;
-  --foreground: #2c2f33;
+  --color-bg: #0f172a;
+  --color-surface: rgba(30,41,59,0.7);
+  --color-border: rgba(255,255,255,0.08);
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5f5;
+  --color-primary: #7c3aed;
+  --color-primary-soft: rgba(124,58,237,0.15);
+
+  --background: var(--color-bg);
+  --foreground: var(--color-text-primary);
 }
 
 .material-symbols-outlined {

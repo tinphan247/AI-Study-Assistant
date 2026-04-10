@@ -6,27 +6,25 @@ interface ActionCardProps {
   description: string;
   icon: React.ReactNode;
   linkTo: string;
-  gradient?: string;
 }
 
 export function ActionCard({ 
   title, 
   description, 
   icon, 
-  linkTo,
-  gradient = "from-violet-500 to-indigo-400"
+  linkTo
 }: ActionCardProps) {
   return (
-    <Link href={linkTo} className="group relative bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-lg p-8 border border-white/40 dark:border-white/10 shadow-2xl shadow-violet-500/5 hover:scale-105 hover:shadow-violet-500/15 transition-all duration-500 block">
-      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white mb-6 group-hover:glow-primary`}>
+    <Link href={linkTo} className="group relative bg-[color:var(--color-surface)] backdrop-blur-xl rounded-lg p-8 border border-[color:var(--color-border)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 ease-out block">
+      <div className="w-16 h-16 rounded-2xl bg-[color:var(--color-primary-soft)] flex items-center justify-center text-[color:var(--color-primary)] mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-bold font-headline mb-3 text-slate-900 dark:text-white">{title}</h3>
-      <p className="text-base text-slate-600 dark:text-slate-300 font-normal">{description}</p>
+      <h3 className="text-xl font-bold font-headline mb-3 text-[color:var(--color-text-primary)]">{title}</h3>
+      <p className="text-base text-[color:var(--color-text-secondary)] font-normal">{description}</p>
       
       {/* Visual cue for navigation */}
       <div className="mt-6 flex justify-end">
-        <ArrowRight className="w-6 h-6 text-violet-500 group-hover:translate-x-2 group-hover:text-indigo-600 transition-all duration-300" />
+        <ArrowRight className="w-6 h-6 text-[color:var(--color-text-secondary)] group-hover:translate-x-[6px] group-hover:text-[color:var(--color-primary)] transition-all duration-300" />
       </div>
     </Link>
   );
