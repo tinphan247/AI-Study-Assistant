@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { aiService } from '../services/ai.service';
+import type { Request, Response } from 'express';
+import { aiService } from '../services/ai.service.js';
 
 export const summarizeText = async (req: Request, res: Response): Promise<void> => {
   try {

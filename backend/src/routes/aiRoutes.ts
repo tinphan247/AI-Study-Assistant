@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { summarizeText, chatWithDocument, generateQuiz } from '../controllers/aiController';
+import { summarizeText, chatWithDocument, generateQuiz } from '../controllers/aiController.js';
 
 const router = Router();
 
